@@ -1,6 +1,6 @@
 /* --- Variáveis e Configurações Globais --- */
 :root {
-  --color-primary: #03296B;
+  --color-primary: #03296b;
   --color-secondary: #009688;
 
   --color-text-dark: #2c3e50;
@@ -11,7 +11,7 @@
   --color-border: #dfe6e9;
   --color-shadow: rgba(0, 0, 0, 0.08);
 
-  --color-accent: #FFEB3B;
+  --color-accent: #ffeb3b;
 
   --font-family-primary: "Roboto", sans-serif;
   --spacing-sm: 1rem;
@@ -49,6 +49,10 @@ a {
   text-decoration: none;
   color: var(--color-primary);
   transition: color 0.3s ease;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 #inicio {
@@ -97,7 +101,7 @@ a {
 }
 
 .section {
-  padding: 2rem var(--spacing-sm);
+  padding: 1rem var(--spacing-sm);
   text-align: center;
   padding-top: var(--header-height);
 }
@@ -111,7 +115,7 @@ a {
 .section__title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--color-text-dark);
 }
 
@@ -270,7 +274,7 @@ a {
 .btn--primary:hover,
 .btn--primary:focus {
   transform: translateY(-3px);
-  background-color: #00796B;
+  background-color: #00796b;
   box-shadow: 0 3px 10px rgba(0, 150, 136, 0.4);
 }
 
@@ -300,19 +304,6 @@ a {
   display: inline-block;
 }
 
-.methodology-card ul {
-  padding-left: 1.5rem;
-}
-
-.tools-list {
-  list-style: none;
-  padding: 0;
-}
-
-.tools-list li {
-  margin-bottom: 0.75rem;
-}
-
 /* Botão de Download */
 .btn--download {
   display: block;
@@ -321,14 +312,14 @@ a {
   padding: 0.5rem 1.2rem;
   font-size: 0.85rem;
   font-weight: 500;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
   border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn--download:hover {
-  background-color: #1976D2;
+  background-color: #1976d2;
   transform: translateY(-2px);
 }
 
