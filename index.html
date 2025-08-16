@@ -2,237 +2,767 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina: IA Aplicada à Prática Docente</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficinas de IA para Educação Inclusiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <!-- ===== Header ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="img/logo_ifsc.png" alt="Logotipo do IFSC" class="h-12" />
+                <a href="#" class="text-2xl font-bold text-gray-900 hidden lg:flex items-center">
+                    <span class="text-blue-600 mr-2">🤖</span> IA na Educação
+                </a>
+            </div>
 
-    <header class="header">
-        <div class="header__container">
-            <h1 class="header__logo">
-                <img src="img/logo.png" alt="Logo do IFSC" class="header__logo-img">
-                IA na Educação
-            </h1>
-            <button class="nav__toggle" aria-expanded="false" aria-controls="nav__menu"
-                aria-label="Abrir menu principal">
-                <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#333" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <nav class="nav" id="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#inicio" class="nav__link">Início</a></li>
-                    <li class="nav__item"><a href="#informacoes" class="nav__link">Informações</a></li>
-                    <li class="nav__item"><a href="#ferramentas" class="nav__link">Ferramentas</a></li>
-                    <li class="nav__item"><a href="#equipe" class="nav__link">Equipe</a></li>
-                </ul>
-            </nav>
+            <!-- Centro: Links de Navegação -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#sobre" class="text-gray-600 hover:text-blue-600 transition duration-300">Objetivo</a>
+                <a href="#oficinas" class="text-gray-600 hover:text-blue-600 transition duration-300">Cronograma</a>
+                <a href="#instrutores" class="text-gray-600 hover:text-blue-600 transition duration-300">Equipe</a>
+                <a href="#contato" class="text-gray-600 hover:text-blue-600 transition duration-300">Contato</a>
+            </div>
+
+            <!-- Lado Direito: Botão e Menu Mobile -->
+            <div class="flex items-center space-x-4">
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#sobre" class="block text-gray-600 hover:text-blue-600 transition duration-300">Objetivo</a>
+            <a href="#oficinas" class="block text-gray-600 hover:text-blue-600 transition duration-300">Cronograma</a>
+            <a href="#instrutores" class="block text-gray-600 hover:text-blue-600 transition duration-300">Equipe</a>
+            <a href="#contato" class="block text-gray-600 hover:text-blue-600 transition duration-300">Contato</a>
         </div>
     </header>
 
-    <main class="main">
-        <section id="inicio" class="section hero">
-            <div class="hero__overlay"></div>
-            <div class="hero__content">
-                <h2 class="hero__title">Oficina: Inteligência Artificial Aplicada à Prática Docente</h2>
-                <p class="hero__subtitle">Capacite-se para inovar em sala de aula com o poder da IA.</p>
-                <div class="hero__info">
-                    <span class="hero__info-item">Data: 22/07/2025</span>
-                    <span class="hero__info-item">Horário: 14h às 17h</span>
-                    <span class="hero__info-item">Modalidade: Presencial</span>
-                </div>
-                <p class="hero__description">
-                    A IA está transformando a educação. Esta oficina prepara professores para utilizarem ferramentas
-                    inovadoras, fortalecendo a autonomia criativa e aprimorando a mediação pedagógica.
+    <!-- ===== Main Content ===== -->
+    <main>
+        <!-- Seção Hero -->
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-28 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                    Capacitação em Ferramentas de IA para Educação Inclusiva
+                </h1>
+                <p class="text-2xl md:text-3xl text-blue-600 font-semibold max-w-4xl mx-auto mb-8">
+                    Inovação Pedagógica com Inteligência Artificial e Metodologias
+                    Ativas
                 </p>
-                <a href="#informacoes" class="btn btn--primary">Mais Informações</a>
+                <a href="#oficinas"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">Ver
+                    Cronograma</a>
             </div>
         </section>
 
-        <section id="informacoes" class="section">
-            <h2 class="section__title">Informações</h2>
-            <div class="section__container">
-                <div class="methodology-flex-container">
-                    <div class="methodology-card">
-                        <h3>Objetivo</h3>
-                        <p class="section__description">
-                            Nosso objetivo é capacitar professores a dominar e aplicar ferramentas de Inteligência
-                            Artificial (IA), a fim de enriquecer suas práticas pedagógicas e promover uma educação mais
-                            interativa, personalizada e inovadora.</p>
-                        </p>
-                        <h3>Metodologia</h3>
-                        <p class="section__description">
-                            A oficina será conduzida com base em uma abordagem prática, colaborativa e centrada no
-                            professor com atividades hands-on. A estrutura contempla:
-                        </p>
-                        <ul class="section__description">
-                            <li>Exposição teórica introdutória dos conceitos fundamentais da IA no contexto educacional;
-                            </li>
-                            <li>Experimentação prática com ferramentas de IA, guiada por tutoriais;</li>
-                            <li>Criação de materiais educacionais digitais, como textos, vídeos, áudios, ilustrações e
-                                músicas;</li>
-                            <li>Acompanhamento por discentes voluntários, que atuarão como monitores e facilitadores.
-                            </li>
-                        </ul>
-                        <h3>Formulário de Avaliação da Oficina</h3>
-                        <p class="section__description">
-                            Por favor, reserve um momento para avaliar a oficina e nos ajudar a melhorar. Acesse: <a
-                                href="https://bit.ly/46Q8vqk" target="_blank">Formulário de Avaliação da Oficina</a>.
-                        </p>
+        <!-- Seção de Informações Gerais -->
+        <section id="info" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        📋 Informações Gerais
+                    </h2>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Card Ministrante -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-100 text-blue-600 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-500 text-sm">MINISTRANTE</h3>
+                        <p class="font-bold text-lg text-gray-900">Prof. Edinilson</p>
+                    </div>
+                    <!-- Card Duração -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-green-100 text-green-600 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-500 text-sm">DURAÇÃO</h3>
+                        <p class="font-bold text-lg text-gray-900">4h por Encontro</p>
+                    </div>
+                    <!-- Card Horário -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-yellow-100 text-yellow-600 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-500 text-sm">HORÁRIO</h3>
+                        <p class="font-bold text-lg text-gray-900">13:30 - 17:30</p>
+                    </div>
+                    <!-- Card Encontros -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-purple-100 text-purple-600 rounded-full p-3 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4" />
+                                <path d="M16 2v4" />
+                                <rect width="18" height="18" x="3" y="4" rx="2" />
+                                <path d="M3 10h18" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-500 text-sm">ENCONTROS</h3>
+                        <p class="font-bold text-lg text-gray-900">5 Formações</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="ferramentas" class="section">
-            <h2 class="section__title">Ferramentas</h2>
-            <div class="section__container">
-                <div class="tools-card">
-                    <h3>Ferramentas Utilizadas</h3>
-                    <p class="section__description">Durante a oficina, os professores terão contato com um conjunto de
-                        ferramentas de IA voltadas
-                        à produção de conteúdo educacional:</p>
-                    <ul class="section__description">
-                        <li>
-                            <strong>Conteúdo Introdutório:</strong> apresentação de nivelamento, criação de prompts
-                            educacionais e visuais, e dicas para uso
-                            pedagógico do ChatGPT.
-                            <a href="./pdf/Apresentação.pdf" class="btn btn--download" target="_blank">Download
-                                do Material</a>
-                            <a href="./pdf/Esquemas de Prompts.pdf" class="btn btn--download" target="_blank">Download
-                                do Material</a>
-                            <a href="./pdf/Prompts - Gerais.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                            <a href="./pdf/Prompts - Imagens.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                            <a href="./pdf/Guia Prático.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                        <li>
-                            <strong>ChatGPT:</strong> geração de conteúdos textuais (roteiros, questões, explicações
-                            etc.).
-                            <a href="./pdf/ChatGPT.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                        <li>
-                            <strong>Pictory:</strong> conversão de textos em vídeos curtos com recursos visuais e
-                            sonoros.
-                            <a href="./pdf/Pictory.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                        <li>
-                            <strong>ElevenLabs:</strong> criação de narrações em áudio com vozes sintéticas
-                            realistas.
-                            <a href="./pdf/ElevenLabs.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                        <li>
-                            <strong>Suno AI:</strong> produção de trilhas sonoras e músicas a partir de textos.
-                            <a href="./pdf/Suno AI.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                        <li>
-                            <strong>Microsoft Designer:</strong> geração automática de imagens, gráficos e
-                            ilustrações educativas.
-                            <a href="./pdf/Microsoft Designer.pdf" class="btn btn--download" target="_blank">Download do
-                                Material</a>
-                        </li>
-                    </ul>
+        <!-- Seção Sobre/Objetivo -->
+        <section id="sobre" class="pb-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="img/ods.png"
+                            alt="Ilustração representando os Objetivos de Desenvolvimento Sustentável 4 (Educação de Qualidade) e 10 (Redução das Desigualdades)"
+                            class="rounded-lg shadow-xl" />
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                            Objetivo da Capacitação
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            Proporcionar aos professores orientadores experiências práticas
+                            com tecnologias que possibilitam a personalização do ensino, a
+                            valorização da diversidade e a promoção de ambientes
+                            educacionais mais interativos e acessíveis.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            Durante os encontros, exploraremos ferramentas digitais com
+                            inteligência artificial voltadas à produção de materiais
+                            didáticos inclusivos e ao apoio a estudantes com necessidades
+                            específicas, com base em metodologias ativas de aprendizagem.
+                        </p>
+                        <div class="flex space-x-4">
+                            <span class="bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full">ODS 4 -
+                                Educação de Qualidade</span>
+                            <span class="bg-green-100 text-green-700 text-sm font-semibold px-4 py-2 rounded-full">ODS
+                                10 - Redução das Desigualdades</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="equipe" class="section team">
-            <h2 class="section__title">Equipe</h2>
-            <div class="section__container">
-                <p class="section__description">Conheça nossa equipe de profissionais que farão este evento acontecer.
+        <!-- Seção de Oficinas com Acordeão -->
+        <section id="oficinas" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">
+                        📅 Cronograma dos Encontros
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Clique em cada encontro para ver os detalhes e ferramentas.
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        Observação: os encontros serão realizados no Laboratório de
+                        Informática 116 (2º Andar).
+                    </p>
+                </div>
+
+                <div id="accordion-container" class="max-w-4xl mx-auto space-y-4">
+                    <!-- Item 0 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">Introdução</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Materiais Complementares
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Coletânea de materiais que oferecem prompts educacionais,
+                                visuais e esquemas práticos para potencializar o uso do
+                                ChatGPT em contextos pedagógicos. Inclui orientações para
+                                aplicação ética em sala de aula e modelos de geração de
+                                imagens profissionais.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Apresentação:</strong>
+                                        introdução e conceitos básicos.
+                                    </p>
+                                    <a href="pdf/Apresentacao.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Guia:</strong>
+                                        dicas de uso pedagógico e ético do ChatGPT em sala de
+                                        aula.
+                                    </p>
+                                    <a href="pdf/Guia_Pratico.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Dicas:</strong>
+                                        esquemas de prompts para o ChatGPT.
+                                    </p>
+                                    <a href="pdf/Esquemas_Prompts.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Coletânea:</strong>
+                                        prompts educacionais para docentes.
+                                    </p>
+                                    <a href="pdf/Coletanea_Prompts_Educacionais.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Coletânea:</strong>
+                                        prompts para geração de imagens profissionais.
+                                    </p>
+                                    <a href="pdf/Coletanea_Geracao_Imagens.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 1 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">1º (18/08)</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Produção de Materiais Visuais e Textuais Acessíveis
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Para apresentação de projetos, gamificação e exposição de
+                                dados em múltiplos formatos.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Infografix:</strong>
+                                        produção intuitiva de infográficos.
+                                    </p>
+                                    <a href="pdf/Tutorial_Infografix.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Ideogram:</strong> geração
+                                        de imagens criativas com texto.
+                                    </p>
+                                    <a href="pdf/Tutorial_Ideogram.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Manus:</strong> escrita
+                                        assistida com IA.
+                                    </p>
+                                    <a href="pdf/Tutorial_Manus.pdf"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                                <h4 class="font-bold text-blue-800">💡 Atividade Prática:</h4>
+                                <p class="text-blue-700">
+                                    Elaboração de um material visual acessível e multimodal.
+                                </p>
+                            </div>
+                            <a href="https://forms.gle/DrZgaiWKpkxk88fD6"
+                                class="bg-green-500 text-white w-full text-center block font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+                                target="_blank">Avaliar Encontro</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">2º (08/09)</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Produção e Edição de Vídeos Inclusivos
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Para aprendizagem criativa, protagonismo discente e
+                                acessibilidade comunicacional.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">CapCut:</strong> editor de
+                                        vídeos gratuito e acessível.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Clideo:</strong> adição
+                                        automática de legendas a vídeos.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Powtoon:</strong> plataforma
+                                        de animação para vídeos narrativos.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                                <h4 class="font-bold text-blue-800">💡 Atividade Prática:</h4>
+                                <p class="text-blue-700">
+                                    Produzir um vídeo educativo com narrativa animada e legendas
+                                    acessíveis.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="bg-green-500 text-white w-full text-center block font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+                                target="_blank">Avaliar Encontro</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">3º (29/09)</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Leitura em Voz Alta e Acessibilidade de Comunicação
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Para inclusão de alunos com deficiência visual, dislexia ou
+                                alterações na fala.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Natural Readers:</strong>
+                                        ferramenta TTS (text-to-speech).
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Voiceitt:</strong>
+                                        reconhecimento de fala atípica.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">AnySummary:</strong>
+                                        plataforma que resume textos longos.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                                <h4 class="font-bold text-blue-800">💡 Atividade Prática:</h4>
+                                <p class="text-blue-700">
+                                    Transformar um material textual em versão acessível com
+                                    áudio e resumo.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="bg-green-500 text-white w-full text-center block font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+                                target="_blank">Avaliar Encontro</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">4º (20/10)</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Organização Visual e Resumos Inteligentes
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Para estudos dirigidos, mapas mentais, storytelling e
+                                aprendizagem baseada em problemas.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Napkin AI:</strong>
+                                        ferramenta para esquematização de ideias.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Gamma App:</strong> geração
+                                        de apresentações automáticas.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Genially:</strong> criação
+                                        de recursos interativos e com gamificação.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                                <h4 class="font-bold text-blue-800">💡 Atividade Prática:</h4>
+                                <p class="text-blue-700">
+                                    Criar um mapa mental interativo sobre os ODS usando IA.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="bg-green-500 text-white w-full text-center block font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+                                target="_blank">Avaliar Encontro</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 do Acordeão -->
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                            <div class="flex items-center">
+                                <span class="text-blue-600 font-bold text-lg mr-4">5º (10/11)</span>
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    Conteúdos Audiovisuais Interativos
+                                </h3>
+                            </div>
+                            <svg class="accordion-icon w-6 h-6 text-blue-600 flex-shrink-0"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-600">
+                            <p class="mb-6">
+                                Para estratégias como rotação por estações, sala de aula
+                                invertida e trilhas de aprendizagem.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Heygen:</strong> criação de
+                                        vídeos com avatares realistas.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">RunwayML:</strong> edição
+                                        criativa de vídeos com IA.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>
+                                        <strong class="text-gray-800">Suno:</strong> geração
+                                        automática de trilhas sonoras.
+                                    </p>
+                                    <a href="#"
+                                        class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full hover:bg-gray-200 transition">Download
+                                        do Material</a>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                                <h4 class="font-bold text-blue-800">💡 Atividade Prática:</h4>
+                                <p class="text-blue-700">
+                                    Criar um mini vídeo explicativo com trilha sonora inclusiva.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="bg-green-500 text-white w-full text-center block font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+                                target="_blank">Avaliar Encontro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Equipe -->
+        <section id="instrutores" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Nossa Equipe</h2>
+                </div>
+                <!-- Ministrante -->
+                <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg text-center mb-16">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1">Ministrante</h3>
+                    <p class="text-gray-600 mb-6">
+                        Especialista apaixonado por educação e tecnologia.
+                    </p>
+                    <img src="img/edinilson.jpg" alt="Foto do Professor Edinilson"
+                        class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-blue-200" />
+                    <h4 class="text-2xl font-bold text-gray-900">Prof. Edinilson</h4>
+                    <p class="text-blue-600 font-medium text-lg">
+                        Especialista em Engenharia de Software
+                    </p>
+                </div>
+
+                <!-- Discentes Voluntários -->
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-bold text-gray-900">
+                        Discentes Voluntários
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Apoio fundamental para o sucesso das oficinas.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <div class="text-center">
+                        <img src="img/caroline.jpg" alt="Foto da Aluna Caroline"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">
+                            Caroline Freitas de Jesus
+                        </h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/kaua.jpg" alt="Foto do Aluno Kauã"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">Kauã Barros Proenço</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/luis.jpeg" alt="Foto do Aluno Luis"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">
+                            Luis Eduardo Maia da Silva
+                        </h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/paulo.jpeg" alt="Foto do Aluno Paulo"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">
+                            Paulo Sérgio Furtado Filho
+                        </h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/ricardo.jpeg" alt="Foto do Aluno Ricardo"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">
+                            Ricardo Amarante Machado
+                        </h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/vitoria.jpg" alt="Foto da Aluna Vitoria"
+                            class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                        <h4 class="font-semibold text-gray-800">
+                            Vitoria das G. R. Francisco
+                        </h4>
+                    </div>
+                </div>
+
+                <!-- Membros Externos -->
+                <div class="text-center mt-16 mb-12">
+                    <h3 class="text-2xl font-bold text-gray-900">Membros Externos</h3>
+                    <p class="text-gray-600 mt-2">
+                        Apoio necessário para planejamento e execução das oficinas.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <img src="img/angelita.png" alt="Foto da Professora Angelita"
+                                class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                            <h4 class="font-semibold text-gray-800">
+                                Angelita Teresinha Coelho
+                            </h4>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://placehold.co/96x96/E0E7FF/4F46E5?text=JH" alt="Foto do Professor Julio"
+                                class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                            <h4 class="font-semibold text-gray-800">
+                                Julio H. Kramer de Almeida
+                            </h4>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://placehold.co/96x96/E0E7FF/4F46E5?text=LR" alt="Foto do Professor Lucas"
+                                class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                            <h4 class="font-semibold text-gray-800">Lucas Rafael de Liz</h4>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://placehold.co/96x96/E0E7FF/4F46E5?text=E" alt="Foto do Estagiário"
+                                class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-300" />
+                            <h4 class="font-semibold text-gray-800">Estagiário</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="bg-blue-600 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    🚀 Junte-se a nós nesta jornada de transformação!
+                </h2>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+                    Descubra como a IA pode revolucionar suas práticas pedagógicas e
+                    promover uma educação verdadeiramente inclusiva e de qualidade para
+                    todos.
                 </p>
-                <div class="team__cards">
-                    <div class="team__card">
-                        <img src="img/edinilson.jpg" alt="Foto de [Nome da pessoa]" class="team__photo">
-                        <h4 class="team__name">Edinilson da Silva Vida</h4>
-                        <p class="team__role">Ministrante</p>
-                        <p class="team__bio">Docente dos cursos da área de Informática do IFSC - Câmpus Lages.</p>
-                    </div>
-                    <div class="team__card">
-                        <img src="img/kaua.jpg" alt="Foto de [Nome da pessoa]" class="team__photo">
-                        <h4 class="team__name">Kauã Barros Proenço</h4>
-                        <p class="team__role">Monitor Voluntário</p>
-                        <p class="team__bio">Aluno da 1ª Fase do Curso de Ciência da Computação do IFSC - Câmpus Lages.
-                        </p>
-                    </div>
-                    <div class="team__card">
-                        <img src="img/paulo.jpeg" alt="Foto de [Nome da pessoa]" class="team__photo">
-                        <h4 class="team__name">Paulo Sérgio Furtado Filho</h4>
-                        <p class="team__role">Monitor Voluntário</p>
-                        <p class="team__bio">Aluno da 1ª Fase do Curso de Ciência da Computação do IFSC - Câmpus Lages.
-                        </p>
-                    </div>
-                </div>
+                <a href="mailto:edinilson.vida@ifsc.edu.br"
+                    class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Enviar Mensagem
+                </a>
             </div>
         </section>
-
-        <section id="contato" class="section contact">
-            <div class="section__container">
-                <h2 class="section__title">Fale Conosco</h2>
-                <p class="section__description">Dúvidas? Envie-nos um e-mail para mais informações.</p>
-                <div class="contact__info">
-                    <p>E-mail: <a href="mailto:edinilson.vida@ifsc.edu.br"
-                            class="contact__link">edinilson.vida@ifsc.edu.br</a></p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <footer class="footer">
-        <div class="footer__container">
-            <p>&copy; 2025 XIX Congresso de Educação do Município de Lages. Todos os direitos reservados.</p>
-            <p>IFSC - Câmpus Lages</p>
-            <p>Rua Heitor Villa Lobos, 225 - Bairro São Francisco</p>
+    <!-- ===== Footer ===== -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 IA na Educação. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">
+                Promovendo a educação do futuro, hoje.
+            </p>
+            <p class="text-sm text-gray-400 mt-1">IFSC - Câmpus Lages</p>
+            <p class="text-sm text-gray-400 mt-1">
+                Rua Heitor Villa Lobos, 225 - Bairro São Francisco
+            </p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.querySelector('.nav__toggle');
-            const navMenu = document.getElementById('nav__menu');
-            const navLinks = document.querySelectorAll('.nav__link');
+        document.addEventListener("DOMContentLoaded", function () {
+            // Funcionalidade do menu mobile
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-            navToggle.addEventListener('click', () => {
-                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-                navToggle.setAttribute('aria-expanded', !isExpanded);
-                navMenu.classList.toggle('nav--open');
+            mobileMenuButton.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
             });
 
-            // Fechar menu ao clicar em um link
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('nav--open')) {
-                        navMenu.classList.remove('nav--open');
-                        navToggle.setAttribute('aria-expanded', 'false');
+            // Funcionalidade do Acordeão
+            const accordionItems = document.querySelectorAll(".accordion-item");
+
+            accordionItems.forEach((item) => {
+                const header = item.querySelector(".accordion-header");
+                header.addEventListener("click", () => {
+                    const wasActive = item.classList.contains("active");
+
+                    // Fecha todos os itens
+                    accordionItems.forEach((otherItem) => {
+                        otherItem.classList.remove("active");
+                    });
+
+                    // Abre o item clicado (se não estava ativo)
+                    if (!wasActive) {
+                        item.classList.toggle("active");
                     }
                 });
             });
 
-            // Smooth scroll para âncoras
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop,
-                            behavior: 'smooth'
-                        });
+            // Fechar menu mobile ao clicar em um link
+            const navLinks = document.querySelectorAll("#mobile-menu a");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (!mobileMenu.classList.contains("hidden")) {
+                        mobileMenu.classList.add("hidden");
                     }
                 });
             });
